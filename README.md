@@ -2,9 +2,7 @@
 Some cryptographic attacks, protocols, or other functions.
 
 ## log
-Solving discret logarithm problem. 
-
-Given a group **G** of order **p**, a generator **g** of G, **h** an element of G, finds **x** where **g^x = h mod p**.
+Solving discret logarithm problem. Given a group **G** of order **p**, a generator **g** , an element **h**, finds **x** where **g^x = h mod p**.
 
  - [x] Brute force attack
  - [x] Shanks' Baby Steps Giant Steps
