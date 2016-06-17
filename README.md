@@ -2,6 +2,11 @@
 Some cryptographic attacks, protocols, or other functions.
 
 ## log
-Solving Discret logarithm problem. Given a group G=\<g\>, |G|=p and h in G, finds x where g^x = h mod p.
- - **BruteForce(g, h, p *Int) *Int** : Brute-force attack.
- - **Shanks(g, h, p *Int) *Int** : Shanks' baby steps giant steps.
+Solving discret logarithm problem. Given a group **G** of order **p**,a generator **g** of G, **h** an element of G, finds **x** where **g^x = h mod p**.
+ - [x] Brute force attack
+ - [x] Shanks' Baby Steps Giant Steps
+ - [ ] Rho Pollard
+```
+BruteForce(g, h, p *Int) *Int
+Shanks(g, h, p *Int) *Int 
+```
