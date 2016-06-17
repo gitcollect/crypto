@@ -3,42 +3,39 @@
 
 package log
 
-import(
-    "testing"
-    "math/big"
-    "fmt"
+import (
+	"math/big"
+	"testing"
 )
 
-func TestBruteForce(t *testing.T){
-    g := big.NewInt(2)
-    h := big.NewInt(5)
-    p := big.NewInt(1019)
+func TestBruteForce(t *testing.T) {
+	g := big.NewInt(2)
+	h := big.NewInt(5)
+	p := big.NewInt(1019)
 
-    x := BruteForce(g, h, p)
-    if x == nil {
-        t.Fatal("BruteForce failed")
-    }
+	x := BruteForce(g, h, p)
+	if x == nil {
+		t.Fatal("BruteForce failed")
+	}
 
-    r := g.Exp(g,x,p)
-    if r.Cmp(h) != 0 {
-        t.Error("BruteForce finds", r, "wants", h)
-    }
+	r := g.Exp(g, x, p)
+	if r.Cmp(h) != 0 {
+		t.Error("BruteForce finds", r, "wants", h)
+	}
 }
 
-func TestShanks(t *testing.T){
-    g := big.NewInt(2)
-    h := big.NewInt(5)
-    p := big.NewInt(1019)
+func TestShanks(t *testing.T) {
+	g := big.NewInt(2)
+	h := big.NewInt(5)
+	p := big.NewInt(1019)
 
-    x := Shanks(g, h, p)
-    if x == nil {
-        t.Fatal("Shanks failed")
-    }
+	x := Shanks(g, h, p)
+	if x == nil {
+		t.Fatal("Shanks failed")
+	}
 
-    r := g.Exp(g,x,p)
-    if r.Cmp(h) != 0 {
-        t.Error("BruteForce finds", r, "wants", h)
-    }
-
-    fmt.Println("Resultat", x)
+	r := g.Exp(g, x, p)
+	if r.Cmp(h) != 0 {
+		t.Error("BruteForce finds", r, "wants", h)
+	}
 }
