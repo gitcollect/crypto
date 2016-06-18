@@ -38,8 +38,7 @@ func Shanks(g, h, p *big.Int) *big.Int {
 	for i := big.NewInt(1); i.Cmp(s) == -1; i.Add(i, big.NewInt(1)) {
 		t.Mul(t, g)
 		t.Mod(t, p)
-		gitoi[t.String()] = new(big.Int)
-		gitoi[t.String()].Set(i)
+		gitoi[t.String()] = new(big.Int).Set(i)
 	}
 
 	// gs = g^(-s) = g^(w-s)
