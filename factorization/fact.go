@@ -54,7 +54,6 @@ func RhoPollard(n *big.Int) *big.Int {
 				y = randSequence(y, n)
 			}
 			i.Add(i, big.NewInt(1))
-
 		}
 		x.Set(y)
 		y = randSequence(x, n)
