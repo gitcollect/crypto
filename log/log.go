@@ -5,6 +5,8 @@ package log
 
 import (
 	"math/big"
+
+	"github.com/kahlys/crypto/math"
 )
 
 // BruteForce finds x where g^x = h mod p. If there is no such x, the function
@@ -28,7 +30,7 @@ func BruteForce(g, h, p *big.Int) *big.Int {
 func Shanks(g, h, p *big.Int) *big.Int {
 	w := new(big.Int)
 	w.Sub(p, big.NewInt(1))
-	s := ceilSqrt(p)
+	s := math.SqrtCeil(p)
 
 	// gitoi[g^i] = i
 	gitoi := make(map[string]*big.Int)
