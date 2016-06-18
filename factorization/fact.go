@@ -12,14 +12,11 @@ import (
 // BruteForce returns a primal number in n decomposition.
 func BruteForce(n *big.Int) *big.Int {
 	s := math.SqrtCeil(n)
-	i := big.NewInt(2)
-	for i.Cmp(s) == -1 {
-		m := new(big.Int)
-		m.Mod(n, i)
+	for i := big.NewInt(2); i.Cmp(s) == -1; i.Add(i, big.NewInt(1)) {
+		m := new(big.Int).Mod(n, i)
 		if m.Cmp(big.NewInt(0)) == 0 {
 			return i
 		}
-		i.Add(i, big.NewInt(1))
 	}
 	return big.NewInt(1)
 }
@@ -32,7 +29,6 @@ func RhoPollard(n *big.Int) *big.Int {
 
 	yx := new(big.Int).Sub(y, x)
 	d := new(big.Int).GCD(nil, nil, yx, n)
-
 	if d.Cmp(big.NewInt(1)) != 0 {
 		return d
 	}
@@ -42,19 +38,17 @@ func RhoPollard(n *big.Int) *big.Int {
 	t.Mul(t, big.NewInt(2))
 
 	for {
-		i := big.NewInt(1)
-		for i.Cmp(t) < 1 {
+		for i := big.NewInt(1); i.Cmp(t) < 1; i.Add(i, big.NewInt(1)) {
 			yx.Sub(y, x)
 			d.GCD(nil, nil, yx, n)
-
 			if d.Cmp(big.NewInt(1)) != 0 {
 				return d
 			}
 			if d.Cmp(big.NewInt(1)) == 0 && i.Cmp(t) == -1 {
 				y = randSequence(y, n)
 			}
-			i.Add(i, big.NewInt(1))
 		}
+
 		x.Set(y)
 		y = randSequence(x, n)
 		t.Mul(t, big.NewInt(2))
