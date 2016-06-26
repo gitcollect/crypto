@@ -11,7 +11,7 @@ import (
 func TestLFSR(t *testing.T) {
 	p, _ := new(big.Int).SetString("2d", 16)   // p = x16 + x14 + x13 + x11 + 1
 	r, _ := new(big.Int).SetString("ace1", 16) // nonzero start
-	l := LFSR{Register: r, Taps: p, Size: 16}
+	l := NewLFSR(r,p,16)
 
 	l.Inc()
 	step := l.Register.Text(16)

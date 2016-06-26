@@ -15,9 +15,12 @@ type LFSR struct {
 
 // NewLFSR creates a Linead-feedback shift register, when the register and the
 // feedback polynome are represented by bits of numbers.
-func (l *LFSR) NewLFSR(reg, taps *big.Int) {
+func NewLFSR(reg, taps *big.Int, size uint) LFSR {
+	var l LFSR
 	l.Register = reg
 	l.Taps = taps
+	l.Size = size
+	return l
 }
 
 // Inc cycles the register and returns the output bit.
