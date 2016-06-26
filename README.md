@@ -2,7 +2,7 @@
 Some cryptographic attacks, protocols, or other functions.
 
 ## Factorization
-Factorization algotirhm for composite integer. 
+Factorization algotirhm for composite integer.
 
  - [x] Brute force attack
  - [x] Rho Pollard
@@ -41,8 +41,8 @@ pol := "2d"
 reg := "ace1"
 // Generates *Int with our previous datas. We put '16' because our datas are hexadecimal numbers.
 // Then creates the LFSR.
-r, _ := new(big.Int).SetString(reg, 16) 
-p, _ := new(big.Int).SetString(pol, 16)   
+r, _ := new(big.Int).SetString(reg, 16)
+p, _ := new(big.Int).SetString(pol, 16)
 l := LFSR{Register: r, Taps: p, Size: size}
 ```
 
@@ -55,5 +55,5 @@ Solving discret logarithm problem. Given a group **G** of order **p**, a generat
 
 ```Go
 BruteForce(g, h, p *big.Int) *big.Int
-Shanks(g, h, p *big.Int) *big.Int 
+Shanks(g, h, p *big.Int) *big.Int
 ```
