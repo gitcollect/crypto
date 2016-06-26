@@ -1,7 +1,7 @@
-# crypto
+# Crypto
 Some cryptographic attacks, protocols, or other functions.
 
-## factorization
+## Factorization
 Factorization algotirhm for composite integer. 
 
  - [x] Brute force attack
@@ -14,11 +14,13 @@ BruteForce(n *big.int) *big.Int
 RhoPollard(n *big.Int) *big.Int
 ```
 
-## lfsr
+## LFSR
 Linear-feedback shift register implementation. Register and feedback polynomial are represented by binary numbers.
  - [x] LFSR
  - [ ] A5/1
  - [ ] Berlekamp massey algorithm
+
+**overview**
 
 NewLFSR creates a Linead-feedback shift register, when the register and the feedback polynome are represented by bits of numbers.
 ```Go
@@ -44,8 +46,7 @@ p, _ := new(big.Int).SetString(pol, 16)
 l := LFSR{Register: r, Taps: p, Size: size}
 ```
 
-
-## log
+## Logarithm
 Solving discret logarithm problem. Given a group **G** of order **p**, a generator **g** , an element **h**, finds **x** where **g^x = h mod p**.
 
  - [x] Brute force attack
