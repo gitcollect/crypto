@@ -22,9 +22,9 @@ Linear-feedback shift register implementation. Register and feedback polynomial 
 
 **overview**
 
-NewLFSR creates a Linead-feedback shift register, when the register and the feedback polynome are represented by bits of numbers.
+NewLFSR creates a Linead-feedback shift register, where the register and the feedback polynome are represented by bits of numbers.
 ```Go
-(*LFSR) NewLFSR(reg, taps *big.Int)
+NewLFSR(reg, taps *big.Int)(LFSR)
 ```
 Inc cycles the register and returns the output bit.
 ```Go
