@@ -13,7 +13,7 @@ type LFSR struct {
 	Size     uint
 }
 
-// NewLFSR creates a Linead-feedback shift register, when the register and the
+// NewLFSR creates a Linead-feedback shift register, where the register and the
 // feedback polynome are represented by bits of numbers.
 func NewLFSR(reg, taps *big.Int, size uint) LFSR {
 	var l LFSR
