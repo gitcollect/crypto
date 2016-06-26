@@ -1,7 +1,7 @@
 // Created on 18 June 2016
 // author youenn.kahlys.laborde
 
-package factorization
+package factor
 
 import (
 	"math/big"
