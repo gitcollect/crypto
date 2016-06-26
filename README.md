@@ -34,7 +34,7 @@ Here is an example on how to create a LFSR.
 ```Go
 // Numbers of taps
 size := 16
-// If the feedback polynomial is 1 + x¹¹ + x¹³ + x¹⁴ + x¹⁶, it is represented by 1011010000000000 = 0x2d.
+// If the feedback polynomial is 1 + x¹¹ + x¹³ + x¹⁴ + x¹⁶, it is represented by 0000000000101101 = 0x2d.
 // The "one" in the polynomial does not correspond to a tap, it corresponds to the input to the first bit
 pol := "2d"
 // Any nonzero start.
